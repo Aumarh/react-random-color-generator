@@ -1,0 +1,53 @@
+.container {
+  height: 50vh;
+  width: 50vw;
+
+  display: grid;
+  place-items: center;
+
+  transition: all 0.5s ease-in-out;
+}
+
+button {
+  padding: 20px 50px;
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: black;
+  background-color: white;
+  border-radius: 11px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.15);
+  transform: translate3d(0, -5px, 5px);
+
+  transition: color 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: translate3d(0, 0, 0);
+  box-shadow: none;
+}
+
+/* .App {
+  text-align: center;
+}
+
+.App-box {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-box-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
