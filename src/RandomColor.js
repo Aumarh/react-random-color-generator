@@ -5,7 +5,6 @@ const RandomColor = () => {
   const [color, setColor] = useState('#000');
 
   const getRgb = () => Math.floor(Math.random() * 256);
-
   const rgbToHex = (r, g, b) =>
     '#' +
     [r, g, b]
@@ -16,6 +15,7 @@ const RandomColor = () => {
       .join('');
 
   const handleGenerate = () => {
+    // eslint-disable-next-line
     const color = {
       r: getRgb(),
       g: getRgb(),
@@ -28,7 +28,7 @@ const RandomColor = () => {
   return (
     <div style={{ backgroundColor: color }} className="container">
       <button style={{ color: color }} onClick={handleGenerate}>
-        Generate
+        Generated Color{color}
       </button>
     </div>
   );
