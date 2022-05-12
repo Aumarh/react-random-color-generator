@@ -7,8 +7,23 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ color: color }}>React Random Color Generator</h1>
-      <div style={{ backgroundColor: color }}>Generated Color: {color}</div>
+      <h1
+        style={{
+          color: color,
+        }}
+      >
+        React Random Color Generator
+      </h1>
+      <div
+        style={{
+          backgroundColor: color,
+          boxSizing: 'border-box',
+          justifyContent: 'center',
+          display: 'flex',
+        }}
+      >
+        Generated Color: {color}
+      </div>
       <div
         style={{
           backgroundColor: color,
