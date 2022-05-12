@@ -1,37 +1,33 @@
 import './App.css';
+import randomColor from 'randomcolor';
 import { useState } from 'react';
 
-const RandomColor = () => {
-  const [color, setColor] = useState('#000');
-
-  const getRgb = () => Math.floor(Math.random() * 256);
-  const rgbToHex = (r, g, b) =>
-    '#' +
-    [r, g, b]
-      .map((x) => {
-        const hex = x.toString(16);
-        return hex.length === 1 ? '0' + hex : hex;
-      })
-      .join('');
-
-  const handleGenerate = () => {
-    // eslint-disable-next-line
-    const color = {
-      r: getRgb(),
-      g: getRgb(),
-      b: getRgb(),
-    };
-
-    setColor(rgbToHex(color.r, color.g, color.b));
-  };
+function App() {
+  const [color, setColor] = useState(randomColor());
 
   return (
-    <div style={{ backgroundColor: color }} className="container">
-      <button style={{ color: color }} onClick={handleGenerate}>
-        Generated Color{color}
-      </button>
+    <div className="App">
+      <h1 style={{ color: color }}>React Random Color Generator</h1>
+      <div style={{ backgroundColor: color }}>Generated Color: {color}</div>
+      <div
+        style={{
+          backgroundColor: color,
+          width: '100vw',
+          height: '400px',
+          display: 'flex',
+          padding: '10px',
+          marginLeft: 'center',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      />
+
+      <br />
+      <button onClick={() => setColor(randomColor())}>Generate</button>
+
+      <br />
     </div>
   );
-};
+}
 
-export default RandomColor;
+export default App;
